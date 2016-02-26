@@ -1,0 +1,20 @@
+<div class="signup">
+      <div class="container" style = "margin-top: 5%">
+          <div class="row">
+              <div class="form col-sm-6 center-align col-sm-offset-3" style="font-size:40px;">
+
+                    <h1>Sign up</h1>
+
+                    <%= form_for(@user) do |f| %>
+                      <%= f.text_field :first_name, :placeholder => "First name",:class => "validate", :type => "text" %>
+                      <%= f.text_field :last_name, :placeholder => "Last name",:class => "validate" %>
+                      <%= f.email_field :email, :placeholder => "Email",:class => "validate" %>
+                      <%= f.password_field :password, :placeholder => "Password",:class => "validate" %>
+                      <%= f.submit "Create an account", class: "waves-effect waves-light cyan darken-1 btn center-align", :style => "margin-top:5%;"  %>
+                    <% end %>
+            </div>
+          </div>
+
+      </div>
+
+</div>
