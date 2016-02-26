@@ -1,0 +1,21 @@
+<div class="login">
+	<div class="container " style = "margin-top: 5%">
+
+		<div class="row">
+			<div class="form col-sm-6 center-align col-sm-offset-3" style="font-size:40px;">
+	      <h1 class="center-align">Log in</h1>
+
+					<%= form_for(:session, url: login_path) do |f| %>
+					  <%= f.email_field :email, :placeholder => "Email", :class => "validate" %>
+					  <%= f.password_field :password, :placeholder => "Password", :class => "validate" %>
+					  <%= f.submit "Log in", class: "waves-effect waves-light cyan darken-1 btn center-align", :style => "margin-top:5%;" %>
+					<% end %>
+	    </div>
+
+		</div>
+
+
+
+
+	</div>
+</div>

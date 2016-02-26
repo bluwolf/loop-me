@@ -6,23 +6,61 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<style media="screen">
+a:visited,a:hover, a:active {
+  color: white;
+  text-decoration: none;
+}
+</style>
+
+
+
 <body>
 
   <nav>
     <div class="nav-wrapper cyan darken-1">
-      <a href="#" class="brand-logo center"
-      onmouseover="this.style.color='#FFB459';this.style.textDecoration='none';"
-      onmouseout="this.style.color='white';">LoopMe</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a  href="sass.html"
+
+
+      <%= link_to "LoopMe", root_path, id:"home", :class => "brand-logo center",
+       :onmouseover=>"this.style.color='#FFB459';this.style.textDecoration='none';",
+       :onmouseout=>"this.style.color='white';"%>
+
+
+      <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a  href="login.html"
           style="font-size:20px;"
           onmouseover="this.style.color='#FFB459';this.style.textDecoration='none';"
           onmouseout="this.style.color='white';">Login</a></li>
-        <li><a href="badges.html"
+        <li><a href="signup.html"
           style="font-size:12px;"
           onmouseover="this.style.color='#FFB459';this.style.textDecoration='none';"
           onmouseout="this.style.color='white';">Sign up</a></li>
+      </ul> -->
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+            <ul>
+              <li>Good day, <%= current_user.first_name %></li>
+              <li><%= link_to "Log out", logout_path, method: "delete",
+              :style => "font-size:12px;",
+              :onmouseover=>"this.style.color='#FFB459';this.style.textDecoration='none';",
+              :onmouseout=>"this.style.color='white';"%></li>
+            </ul>
+            <% else %>
+            <ul>
+              <li><%= link_to "Login", 'login',
+              :style => "font-size:20px;",
+              :onmouseover=>"this.style.color='#FFB459';this.style.textDecoration='none';",
+              :onmouseout=>"this.style.color='white';"%></a></li>
+              <li><%= link_to "Signup", 'signup',
+              :style => "font-size:12px;",
+              :onmouseover=>"this.style.color='#FFB459';this.style.textDecoration='none';",
+              :onmouseout=>"this.style.color='white';" %></a></li>
+            </ul>
+            <% end %>
       </ul>
+
     </div>
   </nav>
 
