@@ -60,10 +60,17 @@ p{
 </head>
 
 <body>
+
  <div class="container" style = "margin-top: 10%">
         <div class="row">
-          <div class="col-lg-3 col-sm-offset-2 col-md-offset-2 col-lg-offset-4 col-xs-7 text-center">
-            <h2 class="cyan-text text-darken-3" style = "font-size: 45px;">Loop.Me</h2>
+          <div class="col-lg-5 col-sm-offset-2 col-md-offset-2 col-lg-offset-3 col-xs-7 text-center">
+            <h2 class="cyan-text text-darken-3" style = "font-size: 45px;">
+              <% if current_user%>
+              <%=current_user.first_name%> <%=current_user.last_name%>
+              <%else%>
+              Loop.me
+              <%end%>
+            </h2>
             <!-- <p>A Single Click to Share Everything About Yourself</p> -->
           </div>
         </div>
@@ -79,10 +86,27 @@ p{
                     <!-- <i class="material-icons">close</i> -->
                   </div>
                 </form>
+
               </div>
             </nav>
 
 
         </div>
     </div>
+
+
+
+    <div class="container">
+    <div class="row" >
+
+    <% if current_user %>
+    <a class=" waves-effect waves-light cyan darken-1 btn-large center-align text-center col-lg-3 col-sm-offset-2 col-md-offset-2 col-lg-offset-4 col-xs-7" >
+      Add More Links
+    </a>
+    <%end%>
+
+    </div>
+
+    </div>
+
 </body>
